@@ -10,13 +10,28 @@ This script is designed for **dual use**:
 
 ## Features
 
-- Fetches Reddit posts from multiple subreddits.
-- Filters by a keyword or brand name.
-- Cleans and preprocesses text data.
-- Calculates sentiment polarity and subjectivity using `TextBlob`.
-- Categorizes posts as **Positive**, **Negative**, or **Neutral**.
-- Outputs a ready-to-use CSV dataset for visualization or machine learning.
-- Compatible with both **Power BI** and **VS Code** environments.
+- **Real-Time Reddit Scraping**  
+  Fetches posts from major OpenAI subreddits (`r/OpenAI`, `r/ChatGPT`, `r/ArtificialInteligence`, etc.) on demand.
+- **NLP Sentiment Analytics**  
+  Python script applies TextBlob for polarity and subjectivity, classifies each post as "Positive", "Negative", or "Neutral".
+- **Automatic Sentiment Mapping**  
+  Sentiment labels are converted to numeric scores for dashboard metrics and KPIs.
+- **Interactive Power BI Dashboard**  
+  - Sentiment distribution bar charts  
+  - Trend lines for average sentiment over time  
+  - Stacked columns by subreddit and sentiment  
+  - Table of top posts by score or comments
+- **Conditional Visual Formatting**  
+  Overall Sentiment Card/gauge changes color:  
+  - **Green** for Positive  
+  - **Red** for Negative  
+  - **Yellow** for Neutral
+- **Single-Click Refresh**  
+  Refresh in Power BI Desktop triggers a live scrape so your visuals always show up-to-date sentiment.
+- **Complete Customization**  
+  Easily switch the topic, subreddit list, or query term for rapid brand or event sentiment tracking.
+- **Exportable Data**  
+  All processed posts and sentiment metadata export to CSV for reporting, archiving, or further analysis.
 
 ---
 
@@ -28,5 +43,6 @@ This script is designed for **dual use**:
 - Tracking real-time brand perception and user opinions.
 
 ## Visual
-<img width="1146" height="656" alt="image" src="https://github.com/user-attachments/assets/74179566-973d-4b11-ba85-4a56a7176647" />
+<img width="1138" height="643" alt="image" src="https://github.com/user-attachments/assets/d3cd35b1-691a-4ee5-884a-7e8046d18f19" />
+
 
