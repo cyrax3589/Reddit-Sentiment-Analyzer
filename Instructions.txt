@@ -1,0 +1,134 @@
+==================================================
+INSTRUCTION - REDDIT SENTIMENT ANALYSIS DASHBOARD
+==================================================
+
+Author: Cyrax
+Script: reddit_sentiment_analysis.py
+Purpose: Fetch Reddit posts containing a specific keyword, analyze sentiment, and export results for use in Power BI dashboards or analytics projects.
+
+
+=====================================================
+1. PREREQUISITES
+=====================================================
+
+Make sure you have the following installed:
+
+Python 3.10+ 
+
+Required Python packages:
+    pip install praw pandas textblob
+
+Optionally, if you encounter SSL or nltk errors:
+    python -m textblob.download_corpora
+
+You also need a Reddit developer app:
+    1. Go to https://www.reddit.com/prefs/apps
+    2. Click “create another app”
+    3. Choose “script” type
+    4. Copy the CLIENT_ID and CLIENT_SECRET
+
+
+=====================================================
+2. CONFIGURATION
+=====================================================
+
+Open the script file and edit these variables under “CONFIGURATION” section:
+
+REDDIT_CLIENT_ID         → Your Reddit App’s Client ID  
+REDDIT_CLIENT_SECRET     → Your Reddit App’s Client Secret  
+REDDIT_USER_AGENT        → A short identifier (e.g., "sentiment-dashboard/1.0")  
+
+SUBREDDITS               → List of subreddit names to search  
+SEARCH_KEYWORD           → Main keyword or brand name (example: "OpenAI")  
+MAX_POSTS                → Maximum number of posts per subreddit  
+DAYS_BACK                → How many days back to include data  
+SAVE_TO_CSV              → True to save output data  
+CSV_FILENAME             → CSV file name to save results  
+
+
+=====================================================
+3. HOW TO RUN
+=====================================================
+
+Method 1 – Run in VS Code or Command Line:
+    cd path_to_your_script
+    python reddit_sentiment_analysis.py
+
+Method 2 – Run DIRECTLY inside Power BI using Python script:
+    1. Open Power BI Desktop
+    2. Go to “Home” → “Get Data” → “More…” → “Other” → “Python script”
+    3. Paste the entire Python code from reddit_sentiment_analysis.py (or import module)
+    4. Click “OK”
+    5. Power BI will execute the code and return a dataframe named “dataset”
+    6. Load it into your Power BI model
+
+This allows Power BI to dynamically fetch and process Reddit data using your Python environment — no separate CSV step required.
+
+
+=====================================================
+4. OUTPUT DETAILS
+=====================================================
+
+The dataframe (and CSV, if enabled) contains the following columns:
+
+    post_id
+    created_at
+    date
+    hour
+    day_of_week
+    brand
+    subreddit
+    author
+    title
+    selftext
+    cleaned_text
+    sentiment_score
+    sentiment_subjectivity
+    sentiment_category (Positive / Neutral / Negative)
+    score
+    num_comments
+    permalink
+    fetch_time
+
+Saved output file (if enabled):
+    reddit_sentiment_log.csv
+
+
+=====================================================
+5. CONNECTING TO POWER BI DASHBOARD
+=====================================================
+
+A. If using CSV:
+    1. Open Power BI Desktop
+    2. Go to “Get Data” → “Text/CSV”
+    3. Select your reddit_sentiment_log.csv file
+    4. Load data and build visuals
+
+B. If using Direct Python connection:
+    1. Go to “Get Data” → “Python script”
+    2. Paste the script or call the function `analyze_and_log()`
+    3. Load the returned dataset directly
+
+Recommended visuals:
+    - Sentiment Category Distribution (Bar or Pie Chart)
+    - Average Sentiment Over Time (Line Chart)
+    - Subreddit vs Sentiment (Stacked Bar)
+    - Keyword Mentions by Day of Week (Heatmap)
+    - Top Posts by Score (Table or Card visuals)
+
+To refresh the data:
+    - Click “Refresh” in Power BI to re-run the Python script and fetch updated Reddit posts.
+
+
+=====================================================
+6. NOTES & TROUBLESHOOTING
+=====================================================
+
+- If no data appears, check:
+      → Subreddit names and keyword accuracy
+      → DAYS_BACK window not too small
+      → Reddit API credentials valid
+- Power BI must have Python scripting enabled under:
+      File → Options → Python scripting → Set your Python executable path
+- Ensure the praw and textblob packages are installed in the same Python environment configured in Power BI.
+
