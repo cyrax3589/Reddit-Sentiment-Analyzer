@@ -1,0 +1,9 @@
+# install packages : pip install -r requirements.txt
+# after installing requirements run "python -m textblob.download_corpora"
+
+praw>=7.7.1
+pandas>=2.0.0
+textblob>=0.17.1
+nltk>=3.8.1
+matplotlib>=3.7.0
+seaborn>=0.12.2
