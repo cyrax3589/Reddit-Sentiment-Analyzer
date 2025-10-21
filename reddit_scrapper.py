@@ -48,7 +48,7 @@ def fetch_reddit_posts():
     since_time = datetime.utcnow() - timedelta(days=DAYS_BACK)
     posts = []
     for subreddit_name in SUBREDDITS:
-        for post in reddit.subreddit(subreddit_name).search(SEARCH_KEYWORD, sort="new", time_filter="day", limit=MAX_POSTS):
+        for post in reddit.subreddit(subreddit_name).search(SEARCH_KEYWORD, sort="new", time_filter="all", limit=MAX_POSTS):
             created_at = datetime.utcfromtimestamp(post.created_utc)
             if created_at < since_time:
                 continue
@@ -106,3 +106,4 @@ def analyze_and_log():
 # ==== FOR VS CODE OR POWER BI ====
 if __name__ == "__main__" or "dataset" not in locals():
     dataset = analyze_and_log()
+
