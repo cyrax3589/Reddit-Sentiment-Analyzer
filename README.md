@@ -26,3 +26,7 @@ This script is designed for **dual use**:
 - Building Reddit-based social sentiment dashboards in Power BI.
 - Academic or market research using Reddit data.
 - Tracking real-time brand perception and user opinions.
+
+## Visual
+<img width="1146" height="656" alt="image" src="https://github.com/user-attachments/assets/74179566-973d-4b11-ba85-4a56a7176647" />
+
