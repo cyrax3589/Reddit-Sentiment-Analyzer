@@ -106,4 +106,3 @@ def analyze_and_log():
 # ==== FOR VS CODE OR POWER BI ====
 if __name__ == "__main__" or "dataset" not in locals():
     dataset = analyze_and_log()
-
