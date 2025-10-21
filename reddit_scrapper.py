@@ -5,9 +5,9 @@ import re
 from textblob import TextBlob
 
 # ==== CONFIGURATION ====
-REDDIT_CLIENT_ID = "xvW23Oh9Ci22pYFeVMHKqA"            # Paste from your Reddit app
-REDDIT_CLIENT_SECRET = "4u9vuH2tc--FgslU8LANgAZy2rottw"    # Paste from your Reddit app
-REDDIT_USER_AGENT = "sentiment-dashboard-power-bi/1.0"  # Any identifier
+REDDIT_CLIENT_ID = ""            # Paste from your Reddit app
+REDDIT_CLIENT_SECRET = ""    # Paste from your Reddit app
+REDDIT_USER_AGENT = ""  # Any identifier
 
 SUBREDDITS = ["OpenAI", "ChatGPT", "Artificial", "ArtificialInteligence", "ChatGPTPro", "AIPromptProgramming", "AGI"]    # List your target subreddits 
 SEARCH_KEYWORD = "OpenAI"       # Your brand/keyword
