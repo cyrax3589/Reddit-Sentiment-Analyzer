@@ -14,7 +14,7 @@ SEARCH_KEYWORD = "OpenAI"       # Your brand/keyword
 MAX_POSTS = 1000                 # Total posts to fetch
 DAYS_BACK = 300                  # Historical window in days
 SAVE_TO_CSV = True             # Set True to output logs
-CSV_FILENAME = "reddit_sentiment_log.csv"
+CSV_FILENAME = f"reddit_sentiment_{SEARCH_KEYWORD}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
 
 # ==== SENTIMENT FUNCTIONS ====
 def clean_text(text):
